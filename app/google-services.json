@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "138745177981",
+    "project_id": "dikommobile-f4446",
+    "storage_bucket": "dikommobile-f4446.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138745177981:android:1ef71090768e7df2b5ce14",
+        "android_client_info": {
+          "package_name": "com.example.dikommobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBh7IPiFA9VLG1yEhMiziafOYcMX-KkyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
