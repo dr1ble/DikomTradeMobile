@@ -3,6 +3,16 @@
     <style name="Base.Theme.DikomMobile" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
+
+    <style name="WelcomeCustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:drawablePadding">0dp</item> <!-- Убирает отступ между иконкой и текстом -->
     </style>
 
     <style name="Theme.DikomMobile" parent="Base.Theme.DikomMobile" />

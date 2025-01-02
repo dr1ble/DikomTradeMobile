@@ -8,7 +8,7 @@
     tools:context=".RegisterActivity">
 
     <ImageView
-        android:id="@+id/logoCompany"
+        android:id="@+id/ivLogoCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/dikom_logo" />
 
     <TextView
-        android:id="@+id/register_title"
+        android:id="@+id/tvRegisterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -29,10 +29,10 @@
         android:textColor="@color/black"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoCompany" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoCompany" />
 
     <TextView
-        android:id="@+id/noaccount_title_tv"
+        android:id="@+id/tvHaveAccountTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -42,10 +42,10 @@
         android:text="Есть аккаунт?"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterTitle" />
 
     <TextView
-        android:id="@+id/goto_login_activiy_tv"
+        android:id="@+id/tvGoToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
@@ -55,11 +55,11 @@
         android:text="Войти"
         android:textColor="@color/red"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/noaccount_title_tv"
-        app:layout_constraintTop_toBottomOf="@+id/register_title" />
+        app:layout_constraintStart_toEndOf="@+id/tvHaveAccountTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegisterTitle" />
 
     <TextView
-        android:id="@+id/name_title"
+        android:id="@+id/tvNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -68,10 +68,10 @@
         android:text="Имя"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noaccount_title_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHaveAccountTitle" />
 
     <TextView
-        android:id="@+id/email_title"
+        android:id="@+id/tvEmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -80,10 +80,10 @@
         android:text="Почта"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
 
     <TextView
-        android:id="@+id/password_title"
+        android:id="@+id/tvPasswordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -92,16 +92,16 @@
         android:text="Пароль"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextName"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_title">
+        app:layout_constraintTop_toBottomOf="@+id/tvNameTitle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -109,51 +109,54 @@
             android:fontFamily="@font/montserrat"
             android:hint="Введите имя"
             android:inputType="textEmailAddress"
+            android:textColorLink="@color/red"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextEmail"
+        android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_title">
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Введите почту"
             android:fontFamily="@font/montserrat"
+            android:hint="Введите почту"
             android:inputType="textPassword"
+            android:textColorLink="@color/red"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPassword"
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         app:passwordToggleEnabled="true"
         android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_title">
+        app:layout_constraintTop_toBottomOf="@+id/tvPasswordTitle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Введите пароль"
             android:fontFamily="@font/montserrat"
+            android:hint="Введите пароль"
             android:inputType="textPassword"
+            android:textColorLink="@color/red"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
 
     <Button
-        android:id="@+id/registerBtn"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -165,6 +168,6 @@
         android:text="Создать аккаунт"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
