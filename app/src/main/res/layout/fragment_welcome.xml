@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    tools:context=".ui.welcome.WelcomeFragment">
 
     <ImageView
         android:id="@+id/ivBackround"
@@ -104,7 +103,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/style_button_fill"
         android:backgroundTint="@color/black"
-        android:drawableEnd="@drawable/arrowright"
+        android:drawableEnd="@drawable/ic_arrowright"
         android:drawablePadding="-5dp"
         android:fontFamily="@font/montserrat_semibold"
         android:text="В каталог"
@@ -113,5 +112,4 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnGoRegister"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcomeDescription" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

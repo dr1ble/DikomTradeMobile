@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/dikom_logo"
+        app:layout_constraintBottom_toTopOf="@+id/glBottomLineNavMenu"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
+
+    <ImageView
+        android:id="@+id/ivProfileUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_profile_user"
+        app:layout_constraintBottom_toTopOf="@+id/glBottomLineNavMenu"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
+
+    <ImageView
+        android:id="@+id/ivSearchNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_search_normal"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileUser"
+        app:layout_constraintEnd_toStartOf="@+id/ivProfileUser"
+        app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
+
+    <ImageView
+        android:id="@+id/ivSaleBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:src="@drawable/home_banner"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glBottomLineNavMenu" />
+
+    <TextView
+        android:id="@+id/tvCategoriesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Категории"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glTopLineCategoriesSection" />
+
+    <TextView
+        android:id="@+id/tvOurProductsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Наша продукция"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection2" />
+
+    <TextView
+        android:id="@+id/tvCategoriesShowMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Смотреть все"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategoriesTitle"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvCategoriesTitle"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glTopLineCategoriesSection" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottomLineNavMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10828226" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTopLineCategoriesSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottomLineCategoriesSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottomLineCategoriesSection2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43184713" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeftBroder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04071247" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTopLineNavMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05732484" />
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:scrollbars="none"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+        app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection">
+
+        <LinearLayout
+            android:id="@+id/llCategoriesSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+            app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection">
+
+            <LinearLayout
+                android:id="@+id/llCategoriesFactory"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/style_button_stroke"
+                android:backgroundTint="@color/categoriesStroke"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_factory_black"
+                    app:tint="@color/red"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Производство"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCategoriesEsd"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/style_button_stroke"
+                android:backgroundTint="@color/categoriesStroke"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/icLogoCategoriesEsd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_esd_furniture"
+                    app:tint="@color/red" />
+
+                <TextView
+                    android:id="@+id/tvCategoryEsd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="ESD Мебель"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCategoriesWardrobe"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/style_button_stroke"
+                android:backgroundTint="@color/categoriesStroke"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <ImageView
+                    android:id="@+id/icLogoCategoriesWardrobe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_wardrobe_black"
+                    app:tint="@color/red"/>
+
+                <TextView
+                    android:id="@+id/tvCategoryWardrobe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Гардероб"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCategoriesOffice"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/style_button_stroke"
+                android:backgroundTint="@color/categoriesStroke"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <ImageView
+                    android:id="@+id/icLogoCategoriesOffice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_office_black"
+                    app:tint="@color/red"/>
+
+                <TextView
+                    android:id="@+id/tvCategoryOffice"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Офис"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCategoriesShelving"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/style_button_stroke"
+                android:backgroundTint="@color/categoriesStroke"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <ImageView
+                    android:id="@+id/icLogoCategoriesShelving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/ic_shelf_black"
+                    app:tint="@color/red"/>
+
+                <TextView
+
+                    android:id="@+id/tvCategoryShelving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Стеллажи"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
