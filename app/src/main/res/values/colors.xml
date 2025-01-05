@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#D20101</color>
     <color name="grey">#6F7384</color>
+    <color name="grey80alpha">#336F7384</color>
     <color name="categoriesStroke">#BDBEC5</color>
     <color name="bottom_nav_background">#FFFFFF</color>
 </resources>

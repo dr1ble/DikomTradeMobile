@@ -2,10 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
     app:startDestination="@id/homeFragment">
     <fragment
-        tools:layout="@layout/fragment_home"
         android:id="@+id/homeFragment"
-        android:name="com.example.dikommobile.ui.welcome.HomeFragment"
-        android:label="HomeFragment" />
+        android:name="com.example.dikommobile.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.dikommobile.ui.cart.CartFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.dikommobile.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

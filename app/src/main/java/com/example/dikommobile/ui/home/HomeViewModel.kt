@@ -1,4 +1,4 @@
-package com.example.dikommobile.ui.welcome
+package com.example.dikommobile.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

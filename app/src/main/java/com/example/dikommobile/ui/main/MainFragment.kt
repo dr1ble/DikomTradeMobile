@@ -1,4 +1,4 @@
-package com.example.dikommobile.ui.welcome
+package com.example.dikommobile.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.dikommobile.R
 import com.example.dikommobile.databinding.FragmentMainBinding
+import com.example.dikommobile.ui.cart.CartFragment
+import com.example.dikommobile.ui.home.HomeFragment
+import com.example.dikommobile.ui.profile.ProfileFragment
 
 class MainFragment : Fragment() {
 
@@ -23,7 +28,7 @@ class MainFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val welcomeViewModel =
+        val mainViewModel =
             ViewModelProvider(this).get(MainViewModel::class.java)
 
         _binding = FragmentMainBinding.inflate(inflater, container, false)
@@ -32,12 +37,42 @@ class MainFragment : Fragment() {
         return root
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        val navController = Navigation.findNavController(requireActivity(), R.id.mainContainerFragment)
+        binding.bottomNavigationView.setupWithNavController(navController)
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        val navController = Navigation.findNavController(requireActivity(), R.id.mainContainerFragment)
+//        binding.bottomNavigationView.setupWithNavController(navController)
+//        binding.bnvNavigation.setOnItemSelectedListener {
+//            when(it.itemId){
+//
+//                R.id.miHome -> replaceFragment(HomeFragment())
+//                R.id.miCart -> replaceFragment(CartFragment())
+//                R.id.miProfile -> replaceFragment(ProfileFragment())
+//
+//                else -> {
+//
+//                }
+//            }
+//            true
+//        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+//    private fun replaceFragment(fragment: Fragment){
+//        val fragmentTransaction = childFragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.nav_host, fragment)
+//        fragmentTransaction.commit()
+//    }
 }

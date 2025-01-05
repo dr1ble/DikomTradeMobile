@@ -36,6 +36,13 @@
         <item name="android:spacing">0.5sp</item>
     </style>
 
+    <style name="CustomCardViewOnlyTop">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
 
     <style name="Theme.DikomMobile" parent="Base.Theme.DikomMobile" />
 </resources>

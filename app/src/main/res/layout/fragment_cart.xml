@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/ivEmptyCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/cart_blank"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toTopOf="@+id/glTopStart">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvEmptyCartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Корзина пуста"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@id/ivEmptyCart">
+
+
+    </TextView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTopStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeftBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04071247" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <TextView
+        android:id="@+id/tvMessageNoItemsInCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Вы не добавили ни одного товара"
+        android:textAlignment="center"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@id/tvEmptyCartTitle">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/btnGoToCatalog"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/style_button_fill"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Перейти к товарам"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@id/tvMessageNoItemsInCart">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

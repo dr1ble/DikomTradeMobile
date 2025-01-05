@@ -1,4 +1,4 @@
-package com.example.dikommobile.ui.welcome
+package com.example.dikommobile.ui.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,8 +23,8 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val welcomeViewModel =
-            ViewModelProvider(this).get(WelcomeViewModel::class.java)
+        val splashViewModel =
+            ViewModelProvider(this).get(SplashViewModel::class.java)
 
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
         val root: View = binding.root

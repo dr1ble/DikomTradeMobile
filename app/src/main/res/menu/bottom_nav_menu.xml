@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/miHome"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_bottom_menu_home_black_24dp"
         android:title="Главная" />
 
     <item
-        android:id="@+id/miCart"
+        android:id="@+id/cartFragment"
         android:icon="@drawable/ic_cart_black_24dp"
         android:title="Корзина" />
 
     <item
-        android:id="@+id/miProfile"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_bottom_menu_profile_black_24dp"
         android:title="Профиль" />
 

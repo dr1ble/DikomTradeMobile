@@ -7,10 +7,11 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bnvNavigation"
+        android:id="@+id/bottomNavigationView"
         app:menu = "@menu/bottom_nav_menu"
         style="@style/CustomBottomNavView"
-
+        app:itemActiveIndicatorStyle="@android:color/transparent"
+        app:itemRippleColor="@android:color/transparent"
         app:itemTextAppearanceActive="@style/CustomBottomNavTextStyleActive"
         app:itemTextAppearanceInactive="@style/CustomBottomNavTextStyleInActive"
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host"
+        android:id="@+id/mainContainerFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,7 +30,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bnvNavigation"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:navGraph="@navigation/main_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,6 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.dikommobile.ui.welcome.MainFragment"
+        android:name="com.example.dikommobile.ui.main.MainFragment"
         android:label="MainFragment" />
+
 </navigation>
