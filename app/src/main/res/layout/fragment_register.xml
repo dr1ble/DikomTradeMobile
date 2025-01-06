@@ -79,7 +79,7 @@
         android:text="Почта"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName" />
+        app:layout_constraintTop_toBottomOf="@+id/tilName" />
 
     <TextView
         android:id="@+id/tvPasswordTitle"
@@ -91,10 +91,10 @@
         android:text="Пароль"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etName"
+        android:id="@+id/tilName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -103,18 +103,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvNameTitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fontFamily="@font/montserrat"
             android:hint="Введите имя"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:textColorLink="@color/red"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etEmail"
+        android:id="@+id/tilEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -123,17 +124,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fontFamily="@font/montserrat"
             android:hint="Введите почту"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:textColorLink="@color/red"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPassword"
+        android:id="@+id/tilPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -143,6 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPasswordTitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fontFamily="@font/montserrat"
@@ -167,5 +170,5 @@
         android:text="Создать аккаунт"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>
