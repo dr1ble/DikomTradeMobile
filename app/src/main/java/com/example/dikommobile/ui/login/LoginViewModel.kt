@@ -1,5 +1,8 @@
 package com.example.dikommobile.ui.login
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
@@ -12,6 +15,7 @@ class LoginViewModel : ViewModel() {
     val toast: LiveData<String?> = _toast
     private val _authState = MutableLiveData(false)
     val authState: LiveData<Boolean> = _authState
+
 
     fun login(email: String, password: String){
 
@@ -26,6 +30,9 @@ class LoginViewModel : ViewModel() {
                 .addOnCompleteListener() { task ->
                     if (task.isSuccessful) {
                         _toast.value = "Успешный вход"
+
+                        SharedPrefsHelper.setUserAuthorized(true)
+
                         _authState.value = true
                     } else {
                         _toast.value = "Ошибка авторизации: ${task.exception?.message}"

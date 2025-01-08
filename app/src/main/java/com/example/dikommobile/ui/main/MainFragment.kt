@@ -48,31 +48,11 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val navController = Navigation.findNavController(requireActivity(), R.id.mainContainerFragment)
-//        binding.bottomNavigationView.setupWithNavController(navController)
-//        binding.bnvNavigation.setOnItemSelectedListener {
-//            when(it.itemId){
-//
-//                R.id.miHome -> replaceFragment(HomeFragment())
-//                R.id.miCart -> replaceFragment(CartFragment())
-//                R.id.miProfile -> replaceFragment(ProfileFragment())
-//
-//                else -> {
-//
-//                }
-//            }
-//            true
-//        }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-//    private fun replaceFragment(fragment: Fragment){
-//        val fragmentTransaction = childFragmentManager.beginTransaction()
-//        fragmentTransaction.replace(R.id.nav_host, fragment)
-//        fragmentTransaction.commit()
-//    }
 }

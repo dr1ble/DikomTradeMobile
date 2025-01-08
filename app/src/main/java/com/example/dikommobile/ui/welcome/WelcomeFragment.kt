@@ -1,5 +1,6 @@
 package com.example.dikommobile.ui.welcome
 
+import SharedPrefsHelper
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,10 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if(SharedPrefsHelper.isUserAuthorized()){
+            findNavController().navigate(R.id.action_navigation_welcome_to_mainFragment)
+        }
+
         binding.btnGoRegister.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register)
         }

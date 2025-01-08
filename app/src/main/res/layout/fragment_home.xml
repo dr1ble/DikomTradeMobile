@@ -16,23 +16,25 @@
         app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
 
     <ImageView
-        android:id="@+id/ivProfileUser"
+        android:id="@+id/ivSearchNormal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_user"
+        android:layout_height="0dp"
+        android:layout_marginEnd="0dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_search_normal"
         app:layout_constraintBottom_toTopOf="@+id/glBottomLineNavMenu"
         app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
         app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
 
     <ImageView
-        android:id="@+id/ivSearchNormal"
+        android:id="@+id/ivProfileUser"
+        android:visibility="invisible"
+        android:layout_marginEnd="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:scaleType="center"
-        android:src="@drawable/ic_search_normal"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfileUser"
-        app:layout_constraintEnd_toStartOf="@+id/ivProfileUser"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_profile_user"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSearchNormal"
+        app:layout_constraintEnd_toStartOf="@+id/ivSearchNormal"
         app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
 
     <ImageView
@@ -53,6 +55,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
         android:text="Категории"
+        android:layout_marginTop="4dp"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
@@ -62,7 +65,7 @@
         android:id="@+id/tvOurProductsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Наша продукция"
         android:textColor="#000000"
@@ -78,6 +81,9 @@
         android:text="Смотреть все"
         android:textColor="@color/red"
         android:textSize="12sp"
+
+        android:visibility="invisible"
+
         app:layout_constraintBottom_toBottomOf="@+id/tvCategoriesTitle"
         app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
         app:layout_constraintHorizontal_bias="1.0"
@@ -129,12 +135,13 @@
 
     <HorizontalScrollView
         android:layout_width="0dp"
-        android:scrollbars="none"
+        android:layout_marginTop="0dp"
         android:layout_height="wrap_content"
+        android:scrollbars="none"
         app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection">
+        app:layout_constraintTop_toBottomOf="@+id/tvCategoriesTitle">
 
         <LinearLayout
             android:id="@+id/llCategoriesSection"
@@ -162,15 +169,15 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="false"
                     android:src="@drawable/ic_factory_black"
-                    app:tint="@color/red"/>
+                    app:tint="@color/red" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:lines="1"
                     android:scrollHorizontally="true"
-                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Производство"
                     android:textColor="#000000"
                     android:textSize="9sp" />
@@ -223,7 +230,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="false"
                     android:src="@drawable/ic_wardrobe_black"
-                    app:tint="@color/red"/>
+                    app:tint="@color/red" />
 
                 <TextView
                     android:id="@+id/tvCategoryWardrobe"
@@ -254,16 +261,16 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="false"
                     android:src="@drawable/ic_office_black"
-                    app:tint="@color/red"/>
+                    app:tint="@color/red" />
 
                 <TextView
                     android:id="@+id/tvCategoryOffice"
-                    android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:fontFamily="@font/montserrat_semibold"
                     android:text="Офис"
+                    android:textAlignment="center"
                     android:textColor="#000000"
                     android:textSize="9sp" />
             </LinearLayout>
@@ -285,7 +292,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="false"
                     android:src="@drawable/ic_shelf_black"
-                    app:tint="@color/red"/>
+                    app:tint="@color/red" />
 
                 <TextView
 
@@ -293,9 +300,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/montserrat_semibold"
                     android:text="Стеллажи"
+                    android:textAlignment="center"
                     android:textColor="#000000"
                     android:textSize="9sp" />
             </LinearLayout>

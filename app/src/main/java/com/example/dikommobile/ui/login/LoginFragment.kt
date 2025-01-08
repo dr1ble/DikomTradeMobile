@@ -1,5 +1,6 @@
 package com.example.dikommobile.ui.login
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginFragment : Fragment() {
-
     private var _binding: FragmentLoginBinding? = null
     private lateinit var  loginViewModel: LoginViewModel
     // This property is only valid between onCreateView and
