@@ -38,6 +38,7 @@ class RegisterFragment : Fragment() {
                 is RegisterViewModel.RegistrationStatus.Success -> {
                     Toast.makeText(requireContext(), "Регистрация успешна", Toast.LENGTH_LONG)
                         .show()
+
                     findNavController().navigate(R.id.action_navigation_register_to_mainFragment)
                 }
 

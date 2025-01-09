@@ -62,4 +62,7 @@ dependencies {
 
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.5")
+
+    implementation("org.apache.poi:poi-ooxml:5.2.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
 }

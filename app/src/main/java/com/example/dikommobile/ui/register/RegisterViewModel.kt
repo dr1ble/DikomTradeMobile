@@ -38,6 +38,7 @@ class RegisterViewModel : ViewModel() {
                             .addOnCompleteListener { databaseTask ->
                                 if (databaseTask.isSuccessful) {
                                     _registrationStatus.value = RegistrationStatus.Success("Регистрация успешна")
+                                    SharedPrefsHelper.setUserAuthorized(true)
                                 } else {
                                     _registrationStatus.value = RegistrationStatus.Error("Ошибка сохранения данных: ${databaseTask.exception?.message}")
                                 }

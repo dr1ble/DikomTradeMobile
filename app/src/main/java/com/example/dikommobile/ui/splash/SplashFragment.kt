@@ -13,9 +13,8 @@ import com.example.dikommobile.databinding.FragmentSplashBinding
 class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
+    private lateinit var splashViewModel: SplashViewModel
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,17 +22,24 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val splashViewModel =
+        splashViewModel =
             ViewModelProvider(this).get(SplashViewModel::class.java)
 
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        return root
-    }
+        // Запускаем проверку авторизации
+        splashViewModel.checkUserAuthorization(findNavController())
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        // Наблюдаем за изменением состояния навигации
+        splashViewModel.navigateTo.observe(viewLifecycleOwner) { destinationId ->
+            destinationId?.let {
+                findNavController().navigate(it)
+                splashViewModel.onNavigationComplete() // Сбрасываем состояние навигации
+            }
+        }
+
+        return root
     }
 
     override fun onDestroyView() {

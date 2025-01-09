@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_welcome">
+    app:startDestination="@+id/splashFragment">
 
     <fragment
         android:id="@+id/navigation_register"
@@ -43,6 +43,29 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.dikommobile.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_navigation_welcome"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation_welcome" />
+        <action
+            android:id="@+id/action_mainFragment_to_navigation_login"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:label="SplashFragment"
+        android:name="com.example.dikommobile.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_navigation_welcome"
+            app:destination="@id/navigation_welcome" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
 </navigation>
