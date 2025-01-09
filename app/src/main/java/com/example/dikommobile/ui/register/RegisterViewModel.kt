@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterViewModel : ViewModel() {
 
@@ -14,7 +14,7 @@ class RegisterViewModel : ViewModel() {
 
     // Состояние регистрации
     sealed class RegistrationStatus {
-        data object Loading : RegistrationStatus()
+        object Loading : RegistrationStatus()
         data class Success(val message: String) : RegistrationStatus()
         data class Error(val message: String) : RegistrationStatus()
     }
@@ -28,23 +28,23 @@ class RegisterViewModel : ViewModel() {
                     val currentUser = FirebaseAuth.getInstance().currentUser
                     currentUser?.let {
                         val userInfo = hashMapOf(
+                            "uid" to it.uid,
                             "email" to email,
-                            "username" to name,
-                            "password" to password
+                            "username" to name
                         )
-                        FirebaseDatabase.getInstance().getReference("Users")
-                            .child(it.uid)
-                            .setValue(userInfo)
+                        FirebaseFirestore.getInstance().collection("Users")
+                            .document(it.uid)
+                            .set(userInfo)
                             .addOnCompleteListener { databaseTask ->
                                 if (databaseTask.isSuccessful) {
                                     _registrationStatus.value = RegistrationStatus.Success("Регистрация успешна")
-                                    SharedPrefsHelper.setUserAuthorized(true)
+                                    SharedPrefsHelper.setUserAuthorized(true) // Ваш метод для сохранения статуса авторизации
                                 } else {
                                     _registrationStatus.value = RegistrationStatus.Error("Ошибка сохранения данных: ${databaseTask.exception?.message}")
                                 }
                             }
                             .addOnFailureListener { exception ->
-                                _registrationStatus.value = RegistrationStatus.Error("Ошибка при записи в базу данных: ${exception.message}")
+                                _registrationStatus.value = RegistrationStatus.Error("Ошибка при записи в Firestore: ${exception.message}")
                             }
                     }
                 } else {

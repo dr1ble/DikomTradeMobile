@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="195dp">
+
+    <ImageView
+        android:id="@+id/ivProductPhoto"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/product_11_0205" />
+
+    <ImageView
+        android:id="@+id/ivAddToWishlist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductPhoto"
+        app:layout_constraintTop_toTopOf="@+id/ivProductPhoto"
+        app:srcCompat="@drawable/ic_wishlist_false" />
+
+    <TextView
+        android:id="@+id/tvProductTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_medium"
+        android:lines="1"
+        android:text="Стол монтажный Стол монтажный"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductPhoto"
+        app:layout_constraintStart_toStartOf="@+id/ivProductPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/ivProductPhoto" />
+
+    <TextView
+        android:id="@+id/tvProductArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="(14.0203-319)"
+        android:textColor="@color/grey"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvProductTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvProductTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductTitle" />
+
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="22500"
+        android:letterSpacing="0.08"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvProductArticle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvProductArticle"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductArticle" />
+
+    <TextView
+        android:id="@+id/tvProductCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="₽"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProductPrice"
+        app:layout_constraintStart_toEndOf="@+id/tvProductPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvProductPrice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

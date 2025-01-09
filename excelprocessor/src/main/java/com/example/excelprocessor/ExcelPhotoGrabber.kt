@@ -1,4 +1,4 @@
-package com.example.dikommobile.assets
+package com.example.excelprocessor
 
 import org.apache.poi.ss.usermodel.WorkbookFactory
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
@@ -96,8 +96,8 @@ fun extractImagesFromExcel(inputFile: String, outputDir: String) {
 }
 
 fun main() {
-    val inputExcelFile = "app/src/main/java/com/example/dikommobile/assets/excelData/verstaki.xlsx" // Путь к Excel файлу
-    val outputDirectory = "app/src/main/java/com/example/dikommobile/assets/outputImages" // Папка для сохранения изображений
+    val inputExcelFile = "excelprocessor/src/main/java/com/example/excelprocessor/excelData/verstaki.xlsx" // Путь к Excel файлу
+    val outputDirectory = "excelprocessor/src/main/java/com/example/excelprocessor/outputImages" // Папка для сохранения изображений
 
     extractImagesFromExcel(inputExcelFile, outputDirectory)
 }

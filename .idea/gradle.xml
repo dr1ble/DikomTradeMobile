@@ -9,7 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/DataExtractor" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dataExtractor" />
+            <option value="$PROJECT_DIR$/excelprocessor" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

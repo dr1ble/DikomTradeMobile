@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "DikomMobile"
 include(":app")
+include(":DataExtractor")
+include(":dataExtractor")
+include(":excelprocessor")

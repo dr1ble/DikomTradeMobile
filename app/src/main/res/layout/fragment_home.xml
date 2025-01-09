@@ -28,68 +28,14 @@
 
     <ImageView
         android:id="@+id/ivProfileUser"
-        android:visibility="invisible"
-        android:layout_marginEnd="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_profile_user"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/ivSearchNormal"
         app:layout_constraintEnd_toStartOf="@+id/ivSearchNormal"
         app:layout_constraintTop_toTopOf="@+id/glTopLineNavMenu" />
-
-    <ImageView
-        android:id="@+id/ivSaleBanner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        android:src="@drawable/home_banner"
-        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
-        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toTopOf="@+id/glBottomLineNavMenu" />
-
-    <TextView
-        android:id="@+id/tvCategoriesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Категории"
-        android:layout_marginTop="4dp"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toTopOf="@+id/glTopLineCategoriesSection" />
-
-    <TextView
-        android:id="@+id/tvOurProductsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Наша продукция"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection2" />
-
-    <TextView
-        android:id="@+id/tvCategoriesShowMore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Смотреть все"
-        android:textColor="@color/red"
-        android:textSize="12sp"
-
-        android:visibility="invisible"
-
-        app:layout_constraintBottom_toBottomOf="@+id/tvCategoriesTitle"
-        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvCategoriesTitle"
-        app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toTopOf="@+id/glTopLineCategoriesSection" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glBottomLineNavMenu"
@@ -120,6 +66,13 @@
         app:layout_constraintGuide_percent="0.43184713" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glLeftBroder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,189 +86,311 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05732484" />
 
-    <HorizontalScrollView
+    <ScrollView
+        android:id="@+id/svMain"
         android:layout_width="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-        app:layout_constraintTop_toBottomOf="@+id/tvCategoriesTitle">
+        app:layout_constraintTop_toTopOf="@+id/glBottomLineNavMenu">
 
         <LinearLayout
-            android:id="@+id/llCategoriesSection"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
-            app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection">
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivSaleBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:src="@drawable/home_banner"
+                app:layout_constraintBottom_toTopOf="@+id/glTopLineCategoriesSection"
+                app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+                app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+                app:layout_constraintTop_toTopOf="@+id/glBottomLineNavMenu" />
 
             <LinearLayout
-                android:id="@+id/llCategoriesFactory"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/style_button_stroke"
-                android:backgroundTint="@color/categoriesStroke"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_factory_black"
-                    app:tint="@color/red" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tvCategoriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Категории"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+                    app:layout_constraintTop_toTopOf="@+id/glTopLineCategoriesSection" />
+
+                <TextView
+                    android:id="@+id/tvCategoriesShowMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="Смотреть все"
+
+                    android:textColor="@color/red"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintStart_toStartOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvCategoriesTitle" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategoriesTitle">
+
+                <LinearLayout
+                    android:id="@+id/llCategoriesSection"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:lines="1"
-                    android:scrollHorizontally="true"
-                    android:text="Производство"
-                    android:textColor="#000000"
-                    android:textSize="9sp" />
-            </LinearLayout>
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+                    app:layout_constraintHorizontal_bias="0.50"
+                    app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+                    app:layout_constraintTop_toTopOf="@+id/glBottomLineCategoriesSection">
+
+                    <LinearLayout
+                        android:id="@+id/llCategoriesFactory"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/style_button_stroke"
+                        android:backgroundTint="@color/categoriesStroke"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="false"
+                            android:src="@drawable/ic_factory_black"
+                            app:tint="@color/red" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:lines="1"
+                            android:scrollHorizontally="true"
+                            android:text="Производство"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCategoriesEsd"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/style_button_stroke"
+                        android:backgroundTint="@color/categoriesStroke"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/icLogoCategoriesEsd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="false"
+                            android:src="@drawable/ic_esd_furniture"
+                            app:tint="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tvCategoryEsd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="ESD Мебель"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCategoriesWardrobe"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/style_button_stroke"
+                        android:backgroundTint="@color/categoriesStroke"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <ImageView
+                            android:id="@+id/icLogoCategoriesWardrobe"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="false"
+                            android:src="@drawable/ic_wardrobe_black"
+                            app:tint="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tvCategoryWardrobe"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Гардероб"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCategoriesOffice"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/style_button_stroke"
+                        android:backgroundTint="@color/categoriesStroke"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <ImageView
+                            android:id="@+id/icLogoCategoriesOffice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="false"
+                            android:src="@drawable/ic_office_black"
+                            app:tint="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tvCategoryOffice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Офис"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCategoriesShelving"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/style_button_stroke"
+                        android:backgroundTint="@color/categoriesStroke"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+
+                        <ImageView
+                            android:id="@+id/icLogoCategoriesShelving"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="false"
+                            android:src="@drawable/ic_shelf_black"
+                            app:tint="@color/red" />
+
+                        <TextView
+
+                            android:id="@+id/tvCategoryShelving"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Стеллажи"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <LinearLayout
-                android:id="@+id/llCategoriesEsd"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/style_button_stroke"
-                android:backgroundTint="@color/categoriesStroke"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/icLogoCategoriesEsd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_esd_furniture"
-                    app:tint="@color/red" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvCategoryEsd"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvOurProductsTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:text="ESD Мебель"
-                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Наша продукция"
                     android:textColor="#000000"
-                    android:textSize="9sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llCategoriesWardrobe"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/style_button_stroke"
-                android:backgroundTint="@color/categoriesStroke"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-
-                <ImageView
-                    android:id="@+id/icLogoCategoriesWardrobe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_wardrobe_black"
-                    app:tint="@color/red" />
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/glLeftBroder"
+                    app:layout_constraintTop_toBottomOf="@+id/llCategoriesWardrobe" />
 
                 <TextView
-                    android:id="@+id/tvCategoryWardrobe"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvOurProductsShowMore"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:text="Гардероб"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:textSize="9sp" />
+                    android:text="Смотреть все"
+                    android:textColor="@color/red"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCategoriesTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintStart_toStartOf="@+id/tvCategoriesTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvCategoriesTitle" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/llCategoriesOffice"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/style_button_stroke"
-                android:backgroundTint="@color/categoriesStroke"
-                android:orientation="vertical"
-                android:padding="5dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-
-                <ImageView
-                    android:id="@+id/icLogoCategoriesOffice"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvProducts"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_office_black"
-                    app:tint="@color/red" />
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tvCategoryOffice"
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ProgressBar
+                    android:id="@+id/pbProducts"
+                    style="?android:attr/progressBarStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:text="Офис"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:textSize="9sp" />
-            </LinearLayout>
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/llCategoriesShelving"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/style_button_stroke"
-                android:backgroundTint="@color/categoriesStroke"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-
-                <ImageView
-                    android:id="@+id/icLogoCategoriesShelving"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:src="@drawable/ic_shelf_black"
-                    app:tint="@color/red" />
-
-                <TextView
-
-                    android:id="@+id/tvCategoryShelving"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/montserrat_semibold"
-                    android:text="Стеллажи"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:textSize="9sp" />
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glRightBorder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.96" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

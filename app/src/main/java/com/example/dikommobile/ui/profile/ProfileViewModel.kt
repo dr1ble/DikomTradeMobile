@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class ProfileViewModel : ViewModel() {
@@ -19,28 +19,20 @@ class ProfileViewModel : ViewModel() {
         _email.value = Firebase.auth.currentUser?.email
 
         Firebase.auth.uid?.let { uid ->
-            Firebase.database.getReference("Users").child(uid).get().addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // Получаем результат в виде DataSnapshot
-                    val snapshot = task.result
-
-                    // Проверяем, существует ли данные в snapshot
-                    if (snapshot != null && snapshot.exists()) {
-                        // Извлекаем имя пользователя
-                        val username = snapshot.child("username").getValue(String::class.java)
-
-                        // Устанавливаем имя в TextView
+            Firebase.firestore.collection("Users").document(uid).get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        // Получаем имя пользователя из документа
+                        val username = document.getString("username")
                         _profileName.value = username ?: "Имя не установлено"
                     } else {
-                        // Если данных нет
                         _profileName.value = "Пользователь не найден"
                     }
-                } else {
-                    // Если запрос не удался
-                    _profileName.value = "Ошибка при загрузке данных"
-                    Log.e("Firebase", "Ошибка при получении данных", task.exception)
                 }
-            }
+                .addOnFailureListener { exception ->
+                    _profileName.value = "Ошибка при загрузке данных"
+                    Log.e("Firebase", "Ошибка при получении данных", exception)
+                }
         }
     }
 }
