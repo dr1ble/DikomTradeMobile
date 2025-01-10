@@ -41,14 +41,37 @@ class MainFragment : Fragment() {
         super.onStart()
 
         val navController = Navigation.findNavController(requireActivity(), R.id.mainContainerFragment)
-        binding.bottomNavigationView.setupWithNavController(navController)
-    }
 
+        // Настроить BottomNavigationView с NavController
+        binding.bottomNavigationView.setupWithNavController(navController)
+
+        // Обработчик для кнопок навигации
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeFragment -> {
+                    // Когда выбран домашний фрагмент, сбрасываем стек и навигацию
+                    navController.popBackStack(R.id.homeFragment, false)  // Удаляем все фрагменты до главного
+                    navController.navigate(R.id.homeFragment)  // Переход к главной странице
+                    return@setOnItemSelectedListener true
+                }
+                R.id.cartFragment-> {
+                    // Переключаемся на корзину
+                    navController.navigate(R.id.cartFragment)
+                    return@setOnItemSelectedListener true
+                }
+                R.id.profileFragment -> {
+                    // Переключаемся на профиль
+                    navController.navigate(R.id.profileFragment)
+                    return@setOnItemSelectedListener true
+                }
+                else -> false
+            }
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        // Здесь можно добавить логику для других элементов UI, если требуется
     }
 
     override fun onDestroyView() {

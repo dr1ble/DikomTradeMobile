@@ -6,8 +6,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
 import java.util.Base64
 
-fun excelToJsonWithImages(inputFile: String, outputDir: String, mainHeaderRowNum: Int, subHeaderRowNum: Int, dataStartRow: Int) {
-    val objectMapper = jacksonObjectMapper() // Создание объекта ObjectMapper
+fun excelToJsonWithImages(
+    inputFile: String,
+    outputDir: String,
+    mainHeaderRowNum: Int,
+    subHeaderRowNum: Int,
+    dataStartRow: Int
+) {
+    val objectMapper = jacksonObjectMapper()
 
     val workbook = WorkbookFactory.create(File(inputFile)) as XSSFWorkbook
     val sheet = workbook.getSheetAt(0)
@@ -40,9 +46,17 @@ fun excelToJsonWithImages(inputFile: String, outputDir: String, mainHeaderRowNum
 
     while (rows.hasNext()) {
         val row = rows.next()
+
+        // Проверяем, содержит ли строка слово "Элементы"
+        val containsElements = row.mapNotNull { it?.toString()?.trim() }
+            .any { it.contains("Элементы", ignoreCase = true) }
+        if (containsElements) {
+            continue // Пропускаем строку
+        }
+
         val rowData = mainHeaders.mapIndexed { index, header ->
             val englishHeader = when (header) {
-                "Фото" -> "photo"
+                "Фото" -> "photoId"
                 "Артикул" -> "article"
                 "Наименование" -> "name"
                 "Описание/комплектация" -> "description"
@@ -94,7 +108,6 @@ fun excelToJsonWithImages(inputFile: String, outputDir: String, mainHeaderRowNum
     File(outputJsonFile).writeText(jsonString)
     println("JSON файл успешно создан: $outputJsonFile")
 }
-
 
 fun main() {
     val inputExcelFile = "excelprocessor/src/main/java/com/example/excelprocessor/excelData/verstaki.xlsx" // Путь к Excel файлу

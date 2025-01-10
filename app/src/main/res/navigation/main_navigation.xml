@@ -8,7 +8,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.dikommobile.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailedProductFragment2"
+            app:destination="@id/detailedProductFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/cartFragment"
@@ -20,4 +24,9 @@
         android:name="com.example.dikommobile.ui.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/detailedProductFragment"
+        android:name="com.example.dikommobile.ui.detailedproduct.DetailedProductFragment"
+        android:label="fragment_detailedproduct"
+        tools:layout="@layout/fragment_detailedproduct" />
 </navigation>

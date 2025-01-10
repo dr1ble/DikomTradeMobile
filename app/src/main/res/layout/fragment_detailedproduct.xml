@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.splash.SplashFragment">
+
+    <ImageView
+        android:id="@+id/ivProductPhoto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/product_11_0205"
+        app:layout_constraintBottom_toTopOf="@+id/glProductPhotoBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:rotation="0"
+        android:rotationX="0"
+        android:rotationY="180"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:src="@drawable/ic_arrowright"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/ivInWishlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:src="@drawable/ic_wishlist_false"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glProductPhotoBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+
+        android:id="@+id/tvDetailedProductTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Стол монтажный ДиКом СР-М-150/90-05 ДСП"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDetailedProductPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/llBadgesSection" />
+
+    <TextView
+
+        android:id="@+id/tvDetailedProductPriceCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="₽"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetailedProductPrice"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintTop_toTopOf="@+id/tvDetailedProductTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+
+        android:id="@+id/tvDetailedProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="95450"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetailedProductTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvDetailedProductPriceCurrency"
+        app:layout_constraintTop_toTopOf="@+id/tvDetailedProductTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/llBadgesSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/ivProductPhoto">
+
+        <ImageView
+            android:id="@+id/ivBadgeFreeDilevery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:src="@drawable/ic_badge_free_dilevery" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeftBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04136253" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96107054" />
+
+    <TextView
+        android:id="@+id/tvDetailedProductDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat"
+        android:maxLines="14"
+        android:text="Рабочее место, регулируемое по высоте от 665 мм до 965 мм с шагом 30 мм. Высота рабочей поверхности регулируется вместе с экраном, а не по отдельности. Конструкция безопасна и не разбалтываетс я при интенсивной эксплуатации. Столешница - общепромышленное исполнение, ДСП 25 мм. Максимальная "
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailedProductTitle" />
+
+    <TextView
+        android:id="@+id/tvDetailedProductDescriptionShowMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Раскрыть"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailedProductDescription" />
+
+    <TextView
+        android:id="@+id/tvQantityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Количество"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailedProductDescriptionShowMore" />
+
+    <Button
+        android:id="@+id/btnBuyNow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/style_button_stroke"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Купить сейчас"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddToCart"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/glLeftBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tvQantityTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/style_button_fill"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Добавить в корзину"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glRightBorder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBuyNow"
+        app:layout_constraintTop_toBottomOf="@+id/tvQantityTitle"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
